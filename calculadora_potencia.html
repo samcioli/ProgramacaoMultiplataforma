@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Potência</title>
+</head>
+<body>
+    <h1>Calculadora de Potência</h1>
+
+    <label for="base">Base:</label>
+    <input type="number" id="base"><br><br>
+
+    <label for="expoente">Expoente:</label>
+    <input type="number" id="expoente"><br><br>
+
+    <button onclick="calcularPotencia()">Calcular Potência</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function calcularPotencia() {
+            var base = parseFloat(document.getElementById("base").value);
+            var expoente = parseFloat(document.getElementById("expoente").value);
+
+            if (isNaN(base) || isNaN(expoente)) {
+                document.getElementById("resultado").innerHTML = "Por favor, insira números válidos.";
+                return;
+            }
+
+            var potencia = Math.pow(base, expoente);
+            document.getElementById("resultado").innerHTML = base + " elevado a " + expoente + " é: " + potencia.toFixed(2);
+        }
+    </script>
+</body>
+</html>

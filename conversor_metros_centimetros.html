@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Conversor de Metros para Centímetros</title>
+</head>
+<body>
+    <h1>Conversor de Metros para Centímetros</h1>
+
+    <label for="metros">Metros:</label>
+    <input type="number" id="metros"><br><br>
+
+    <button onclick="converterMetrosParaCentimetros()">Converter</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function converterMetrosParaCentimetros() {
+            var metros = parseFloat(document.getElementById("metros").value);
+
+            if (isNaN(metros)) {
+                document.getElementById("resultado").innerHTML = "Por favor, insira um número válido.";
+                return;
+            }
+
+            var centimetros = metros * 100;
+            document.getElementById("resultado").innerHTML = metros + " metros é igual a " + centimetros.toFixed(2) + " centímetros.";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Conversor de Quilômetros para Milhas</title>
+</head>
+<body>
+    <h1>Conversor de Quilômetros para Milhas</h1>
+
+    <label for="quilometros">Quilômetros:</label>
+    <input type="number" id="quilometros"><br><br>
+
+    <button onclick="converterQuilometrosParaMilhas()">Converter</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function converterQuilometrosParaMilhas() {
+            var quilometros = parseFloat(document.getElementById("quilometros").value);
+
+            if (isNaN(quilometros)) {
+                document.getElementById("resultado").innerHTML = "Por favor, insira um número válido.";
+                return;
+            }
+
+            var milhas = quilometros * 0.621371;
+            document.getElementById("resultado").innerHTML = quilometros + " quilômetros é igual a " + milhas.toFixed(2) + " milhas.";
+        }
+    </script>
+</body>
+</html>

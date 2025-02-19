@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Juros Compostos</title>
+</head>
+<body>
+    <h1>Calculadora de Juros Compostos</h1>
+
+    <label for="capital">Capital:</label>
+    <input type="number" id="capital"><br><br>
+
+    <label for="taxa">Taxa de Juros (%):</label>
+    <input type="number" id="taxa"><br><br>
+
+    <label for="periodo">Período:</label>
+    <input type="number" id="periodo"><br><br>
+
+    <button onclick="calcularJurosCompostos()">Calcular Juros Compostos</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function calcularJurosCompostos() {
+            var capital = parseFloat(document.getElementById("capital").value);
+            var taxa = parseFloat(document.getElementById("taxa").value);
+            var periodo = parseFloat(document.getElementById("periodo").value);
+
+            if (isNaN(capital) || isNaN(taxa) || isNaN(periodo)) {
+                document.getElementById("resultado").innerHTML = "Por favor, insira números válidos.";
+                return;
+            }
+
+            var montante = capital * Math.pow((1 + taxa / 100), periodo);
+            document.getElementById("resultado").innerHTML = "Montante com Juros Compostos: " + montante.toFixed(2);
+        }
+    </script>
+</body>
+</html>
